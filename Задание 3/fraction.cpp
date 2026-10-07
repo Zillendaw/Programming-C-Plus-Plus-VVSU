@@ -1,3 +1,4 @@
+#include <iostream>
 #include "fraction.h"
 
 Fraction::Fraction()
@@ -12,15 +13,9 @@ Fraction::Fraction(int num, int den)
 	denominator = den;
 }
 
-Fraction Fraction(int num, int den)
-{
-	numerator = num;
-	denominator = den;
-}
-
 Fraction Fraction::operator+(Fraction f2)
 {
-	Fraction.result;
+	Fraction result;
 	result.numerator = numerator * f2.denominator +
 					   denominator * f2.numerator;
 					   
@@ -34,3 +29,4 @@ std::ostream& operator<<(std::ostream& os, const Fraction& f)
 	os << f.numerator << "/" << f.denominator;
 	return os;
 }
+

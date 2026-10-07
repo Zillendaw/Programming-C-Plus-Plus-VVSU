@@ -2,8 +2,7 @@
 #define FRACTIOH_H
 #include <iostream>
 
-class Fraction
-{
+class Fraction {
 public:
 	int numerator;
 	int denominator;
@@ -15,3 +14,4 @@ public:
 std::ostream& operator<<(std::ostream& os, const Fraction& f);
 
 #endif // FRACTION_H
+
