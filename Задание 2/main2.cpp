@@ -4,15 +4,14 @@ using namespace std;
 
 int main()
 {
-	MyTime t1, t2(1,10,25),t3(1,5,10);
-	t1.info();
-	t2.info();
-	t3.info();
-	t1 = t2.add(10);
-	t1.info();
-	t2.info();
-	t1 = t2.add(t3);
-	t1.info();
-	t2.info();	
+	MyTime test(00,90,30);
+	
+	cout << "ДО нормализации: "; 
+	test.info();
+	
+	cout << "ПОСЛЕ нормализации: ";
+	test.normalize();
+	test.info();
+	
 	return 0;
 }
