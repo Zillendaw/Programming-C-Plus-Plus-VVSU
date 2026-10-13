@@ -38,11 +38,11 @@ void MyTime::info()
 	
 	if (seconds < 10)
 	{
-		cout << setw(2) << setfill('0') << seconds << endl;
+		cout << setw(2) << setfill('0') << seconds;
 	}
 	else
 	{
-		cout << seconds << endl;
+		cout << seconds;
 	}
 	
 	
