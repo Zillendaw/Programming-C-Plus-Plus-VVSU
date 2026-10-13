@@ -49,8 +49,14 @@ int main()
 	
 	cout << endl;
 	
-	cout << "Прибавим секунды к конечному промежутку... [+30]" << endl;
+	cout << "Прибавим секунды к промежутку... [+30]" << endl;
 	test_time.add(30);
+	test_time.info();
+	
+	cout << endl;
+	
+	cout << "Сложим 13 часов к промежутку..." << endl;
+	test_time.add(end_air_time);
 	test_time.info();
 	
 	cout << endl;
@@ -71,7 +77,8 @@ int main()
 		{
 			
 			cout << "Номер рейса: " << number_airline << " " << "Отправление В: " << city << endl;
-			cout << "Время отправления: " << h << ":" << m << endl;
+			cout << "Время отправления: ";
+			air_time1.info();
 		}
 		
 		
