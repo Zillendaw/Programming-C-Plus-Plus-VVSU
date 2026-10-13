@@ -4,22 +4,17 @@ using namespace std;
 
 int main()
 {
-	MyTime test(00,90,30);
+	MyTime test(00,60,30);
 	
-	cout << "ДО нормализации: "; 
+	cout << "Объект Test: "; 
 	test.info();
 	
-	cout << "ПОСЛЕ нормализации: ";
-	test.normalize();
-	test.info();
+	MyTime test_2(00,00,-59);
 	
-	cout << "Вычитаем секунд 30: ";
-	test.substract_seconds(30);
-	test.info();
+	cout << "Объект с -59 секундам: ";
+	test_2.info();
 	
-	MyTime test_2(00,30,00);
-	test.substract_time(test_2);
-	test.info();
+	
 	
 	return 0;
 }

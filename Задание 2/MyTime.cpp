@@ -6,11 +6,13 @@ using namespace std;
 MyTime::MyTime()
 {
 	hour = 0; minutes = 0; seconds = 0;
+	normalize();
 }
 
 MyTime::MyTime(int _hour, int _minutes, int _seconds)
 {
 	hour = _hour; minutes = _minutes; seconds = _seconds;
+	normalize();
 }
 
 void MyTime::info()
@@ -72,18 +74,18 @@ void MyTime::normalize()
 	{
 		total += 24 * 3600;
 	}
-	else
-	{
-		seconds = total % 60;
-		minutes = (total / 60) % 60;
-		hour = (total / 3600) % 24;
-	}
-	
+
+	seconds = total % 60;
+	minutes = (total / 60) % 60;
+	hour = (total / 3600) % 24;
+		
 }
 
 MyTime MyTime::add(int seconds)
 {
 	this->seconds = this->seconds + seconds;
+	
+	normalize();
 	return *this;
 }
 
@@ -92,6 +94,8 @@ MyTime MyTime::add(MyTime time)
 	hour = hour + time.hour;
 	minutes = minutes + time.minutes;
 	seconds = seconds + time.seconds;
+	
+	normalize();
 	return *this;
 }
 
