@@ -46,6 +46,17 @@ void MyTime::info()
 	
 }
 
+void MyTime::substract_seconds(int seconds_to_substract)
+{
+	int total = to_seconds() - seconds_to_substract;
+	
+	// Обновляем поля используя метод normalize()
+	hour = 0;
+	minutes = 0;
+	seconds = total;
+	normalize();
+}
+
 inline int MyTime::to_seconds()
 {
 	int total = (hour * 3600) + (minutes * 60) + seconds;
@@ -81,5 +92,14 @@ MyTime MyTime::add(MyTime time)
 	hour = hour + time.hour;
 	minutes = minutes + time.minutes;
 	seconds = seconds + time.seconds;
+	return *this;
+}
+
+
+MyTime MyTime::substract_time(MyTime& other)
+{
+	// Вычитаем секунды второго объекта из текущего объекта
+	substract_seconds(other.to_seconds());
+	
 	return *this;
 }

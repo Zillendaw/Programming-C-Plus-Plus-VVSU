@@ -14,6 +14,8 @@ public:
 	MyTime add(MyTime time);
 	void normalize();
 	inline int to_seconds();
+	void substract_seconds(int seconds_to_substract);
+	MyTime substract_time(MyTime& other);
 };
 
 #endif // MYTIME_H
