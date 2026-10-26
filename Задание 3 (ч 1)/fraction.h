@@ -7,6 +7,8 @@ public:
 	int numerator;
 	int denominator;
 	Fraction();
+	double toDouble();
+	double normalize();
 	Fraction(int num, int den);
 	Fraction operator+(Fraction f2);
 };
