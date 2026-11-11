@@ -1,5 +1,6 @@
 #ifndef SPHERA_H
 #define SPHERA_H
+#include <iostream>
 
 class Decart;
 
@@ -8,8 +9,14 @@ class Sphera
 public:
 	double lon, lat, R;
 	Sphera();
+	Sphera(const Decart &d);
 	Sphera(double _lon, double _lat, double _R);
-	operator Decart();		
+	
+	
+	explicit operator Decart();	
+	static double bigCircleDistance(const Sphera &p1, const Sphera &p2);	
 };
+
+std::ostream& operator<<(std::ostream& os, const Sphera& s);
 
 #endif // SPHERA_H
